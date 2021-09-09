@@ -17,33 +17,49 @@ cyan: hsl(189, 41%, 97%);
 White: hsl(0, 0%, 100%);
 cyan: hsl(172, 67%, 45%);-->
 <body>
-    <section class="container" id="containerPrimario">
+    <section class="container-fluid" id="containerPrimario">
         <section id="logo"><img src="images/logo.svg" alt=""></section>
         <section class="container" id="containerSec">
             <div id="conta">Bill</div>
-            <input id="quantidade"><img src="images/icon-dollar.svg" alt="" width="18px"></input>
+            <img src="images/icon-dollar.svg" alt="" width="18px" id="iconConta"><input id="quantidade"></input>
             <section id="containerSel">
                 <div id="textoSel">
                     <h3><b>Selecione a opção desejada %</b></h3>
                 </div>
                         
                 <section id="opções"> 
-                    <div class="row">
+                    <div class="row" >
                         <div id="op1"><b>5%</b></div>
                         <div id="op2"><b>10%</b></div>
                         <div id="op3"><b>15%</b></div>
                         <div id="op4"><b>25%</b></div>
                         <div id="op5"><b>50%</b></div>
-                        <input type="text" value="Custom" id="custom"></input>
+                        <input type="text" placeholder="Custom" id="custom"></input>
                     </div>
                 </section>
                 <div id="textoPessoa">
                     <h3><b>Número de pessoas</b></h3>
                 </div>
-                <img src="images/icon-person.svg" width="25px"><input type="text" value="" id="numeroPessoa"> 
+                <img src="images/icon-person.svg" width="25px" id="iconeP"><input type="text" value="" id="numeroPessoa"> 
+
+                
             </section>
-            <div class="container" id="containerTerc"></div>
-            
+        
+                <section class="container" id="containerTerc">
+                    <span id="texto3a">
+                        <p>Tip Amount</p>
+                        <h1>/person</h1>
+                    </span>
+                
+                    <span id="texto3b">
+                        <p>Total</p>
+                        <h1>/person</h1>
+                    </span>
+                    <span id="valor1">$0.00</span>
+                    <span id="valor2">$0.00</span>
+                
+                    <input type="button" value="RESET" class="btn btn-success" id="botReset">
+                </section>
 
         </section>
 

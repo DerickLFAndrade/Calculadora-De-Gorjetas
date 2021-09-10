@@ -7,8 +7,11 @@ var op3 = document.getElementById("op3")
 var op4 = document.getElementById("op4")
 var op5 = document.getElementById("op5")
 var botao = document.getElementById("botReset")
+var vl1 = document.getElementById("valor1")
+var vl2 = document.getElementById("valor2")
 
-
+$('#logoImg').fadeOut(0)
+$('#logoImg').fadeIn(1000)
 
 function borda() {
     
@@ -20,48 +23,16 @@ function borda() {
     custom.style.border = 'none'
     nPessoa.style.border = 'none'
 
-  op1.style.background = 'hsl(183, 100%, 15%)'
-  op1.style.color = 'white'
-
-  op2.style.background = 'hsl(183, 100%, 15%)'
-  op2.style.color = 'white'
-
-  op3.style.background = 'hsl(183, 100%, 15%)'
-  op3.style.color = 'white'
-
-  op4.style.background = 'hsl(183, 100%, 15%)'
-  op4.style.color = 'white'
-
-  op5.style.background = 'hsl(183, 100%, 15%)'
-  op5.style.color = 'white'
-
-  
-  
   }
 function bordaCust() {
     
     custom.style.textAlign = 'right'
-    focus()
-    custom.style.border = 'solid 4px'
     custom.style.borderColor = 'hsl(172, 67%, 45%)'
 
     nPessoa.style.border = 'none'
     conta.style.border = 'none'
    
-  op1.style.background = 'hsl(183, 100%, 15%)'
-  op1.style.color = 'white'
-
-  op2.style.background = 'hsl(183, 100%, 15%)'
-  op2.style.color = 'white'
-
-  op3.style.background = 'hsl(183, 100%, 15%)'
-  op3.style.color = 'white'
-
-  op4.style.background = 'hsl(183, 100%, 15%)'
-  op4.style.color = 'white'
-
-  op5.style.background = 'hsl(183, 100%, 15%)'
-  op5.style.color = 'white'
+  
 
  
 }
@@ -72,29 +43,12 @@ function inpPessoa() {
   nPessoa.style.border = 'solid 4px'
   nPessoa.style.borderColor = 'hsl(172, 67%, 45%)'
   conta.style.border = 'none'
-  custom.style.border = 'none'
-
-  op1.style.background = 'hsl(183, 100%, 15%)'
-  op1.style.color = 'white'
-
-  op2.style.background = 'hsl(183, 100%, 15%)'
-  op2.style.color = 'white'
-
-  op3.style.background = 'hsl(183, 100%, 15%)'
-  op3.style.color = 'white'
-
-  op4.style.background = 'hsl(183, 100%, 15%)'
-  op4.style.color = 'white'
-
-  op5.style.background = 'hsl(183, 100%, 15%)'
-  op5.style.color = 'white'
-
-  
-  
+  custom.style.border = 'none' 
 }
 
 
 function opc1() {
+  
   op1.style.backgroundColor ='hsl(172, 67%, 45%)'
   op1.style.color = 'rgb(1, 82, 82)'
 
@@ -114,7 +68,7 @@ function opc1() {
   conta.style.border = 'none'
   custom.style.border = 'none'
 
-  custom.value = 'Custom'
+  custom.placeholder = 'Custom'
   custom.style.textAlign = 'center'
   }
 
@@ -139,7 +93,7 @@ function opc2() {
   conta.style.border = 'none'
   custom.style.border = 'none'
 
-  custom.value = 'Custom'
+  custom.placeholder = 'Custom'
   custom.style.textAlign = 'center'
 }
 
@@ -164,7 +118,7 @@ function opc3() {
   conta.style.border = 'none'
   custom.style.border = 'none'
 
-  custom.value = 'Custom'
+  custom.placeholder = 'Custom'
   custom.style.textAlign = 'center'
 }
 
@@ -189,7 +143,7 @@ function opc4() {
   conta.style.border = 'none'
   custom.style.border = 'none'
 
-  custom.value = 'Custom'
+  custom.placeholder = 'Custom'
   custom.style.textAlign = 'center'
 }
 
@@ -214,7 +168,7 @@ function opc5() {
   conta.style.border = 'none'
   custom.style.border = 'none'
 
-  custom.value = 'Custom'
+  custom.placeholder = 'Custom'
   custom.style.textAlign = 'center'
 }
 
@@ -231,12 +185,98 @@ function bot() {
     botao.style.background = 'hsl(172, 67%, 45%)'
     }
     function resetar() {
+     
       custom.value = ''
       conta.value = ''
       nPessoa.value = ''
+      op1.style.backgroundColor = 'hsl(183, 100%, 15%)'
+      op1.style.color = 'white'
+
+      op2.style.background = 'hsl(183, 100%, 15%)'
+      op2.style.color = 'white'
+
+      op3.style.background = 'hsl(183, 100%, 15%)'
+      op3.style.color = 'white'
+
+      op4.style.background = 'hsl(183, 100%, 15%)'
+      op4.style.color = 'white'
+
+      op5.style.background = 'hsl(183, 100%, 15%)'
+      op5.style.color = 'white'
+      vl1.innerHTML = '$0.00'
+      vl2.innerHTML = '$0.00'
       }
 
+function calc() {
+  var qtdPessoa = parseFloat(nPessoa.value)
+  var porcentagem
+  if (vl1 == 'NaN') {
+    vl1.innerHTML ='$0.00'
+  }
+  if (op1.style.color == 'rgb(1, 82, 82)') {
+   opval1 = parseFloat(conta.value)
+    porcentagem = opval1 * 5 / 100
+    opval1+= porcentagem
+    resultado = opval1/qtdPessoa  
+ 
+  
+}
+  else if (op2.style.color == 'rgb(1, 82, 82)') {
+    opval1 = parseFloat(conta.value)
+    porcentagem = opval1 * 10 / 100
+    opval1 += porcentagem
+    resultado = opval1 / qtdPessoa
+    
+     
+    
+  }
+  else if (op3.style.color == 'rgb(1, 82, 82)') {
+    opval1 = parseFloat(conta.value)
+    porcentagem = opval1 * 15 / 100
+    opval1 += porcentagem
+    resultado = opval1 / qtdPessoa
+   
+     
+    
+  }
+  else if (op4.style.color == 'rgb(1, 82, 82)') {
+    opval1 = parseFloat(conta.value)
+    porcentagem = opval1 * 25 / 100
+    opval1 += porcentagem
+    resultado = opval1 / qtdPessoa
+   
+     
+    
+  }
+  
+  else if (op5.style.color == 'rgb(1, 82, 82)') {
+    opval1 = parseFloat(conta.value)
+    porcentagem = opval1 * 50 / 100
+    opval1 += porcentagem
+    resultado = opval1 / qtdPessoa
+   
+   
+   
+  }
+  else if (custom.style.border) {
+    opval1 = parseFloat(conta.value)
+    opvalCustom = parseFloat(custom.value)
+    porcentagem = opval1 * opvalCustom / 100
+    opval1 += porcentagem
+    resultado = opval1 / qtdPessoa
+   
+  
+    
+  }
+  vl1.innerHTML = `$${porcentagem.toFixed(2)}`
+  vl2.innerHTML = `$${resultado.toFixed(2)}`
+}
+addEventListener('input', calc)
+
+
       
+
+
   botao.addEventListener('click', resetar)
   botao.addEventListener('mouseenter', bot)
   botao.addEventListener('mouseout', bot2)

@@ -207,17 +207,18 @@ function bot() {
       vl2.innerHTML = '$0.00'
       }
 
-function calc() {
+
+function calc() { //Calcula a porcentagem selecionada da gorjeta de acordo com o valor da conta e divide a conta com o número de pessoas informado.
+  
   var qtdPessoa = parseFloat(nPessoa.value)
   var porcentagem
-  if (vl1 == 'NaN') {
-    vl1.innerHTML ='$0.00'
-  }
-  if (op1.style.color == 'rgb(1, 82, 82)') {
+
+   if (op1.style.color == 'rgb(1, 82, 82)') {
    opval1 = parseFloat(conta.value)
     porcentagem = opval1 * 5 / 100
     opval1+= porcentagem
     resultado = opval1/qtdPessoa  
+   
  
   
 }
@@ -244,9 +245,6 @@ function calc() {
     porcentagem = opval1 * 25 / 100
     opval1 += porcentagem
     resultado = opval1 / qtdPessoa
-   
-     
-    
   }
   
   else if (op5.style.color == 'rgb(1, 82, 82)') {
@@ -264,28 +262,25 @@ function calc() {
     porcentagem = opval1 * opvalCustom / 100
     opval1 += porcentagem
     resultado = opval1 / qtdPessoa
-   
-  
-    
   }
-  vl1.innerHTML = `$${porcentagem.toFixed(2)}`
-  vl2.innerHTML = `$${resultado.toFixed(2)}`
+  if (conta.value  && nPessoa.value) {
+    vl1.innerHTML = `$${porcentagem.toFixed(2)}`
+    vl2.innerHTML = `$${resultado.toFixed(2)}`
+  }
+  
+ 
 }
-addEventListener('input', calc)
 
-
-      
-
-
-  botao.addEventListener('click', resetar)
-  botao.addEventListener('mouseenter', bot)
-  botao.addEventListener('mouseout', bot2)
+  addEventListener('input', calc) //Chama a função ao adicionar algum valor em qualquer input
+  botao.addEventListener('click', resetar) //reseta todos os campos
+  botao.addEventListener('mouseenter', bot) //chama um evento no botão para mudar o background quando o mouse estiver em cima
+  botao.addEventListener('mouseout', bot2) //Volta o background original
   op1.addEventListener('click', opc1)
   op2.addEventListener('click', opc2)
   op3.addEventListener('click', opc3)
   op4.addEventListener('click', opc4)
   op5.addEventListener('click', opc5)
-  conta.addEventListener('click', borda)
+  conta.addEventListener('click', borda) 
   custom.addEventListener('click', bordaCust)
   nPessoa.addEventListener('click', inpPessoa)
-document.addEventListener('click', focs)
+  document.addEventListener('click', focs)

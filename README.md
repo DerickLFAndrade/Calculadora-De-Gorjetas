@@ -29,3 +29,4 @@
 - <b>CSS3:</b> Esse desafio me ajudou a desenvolver a responsividade de telas mobile/desktop e posicionamento de elementos na tela.
 - <b>JS</B>Eventos, calculos e funções.
 
+Preview https://dericklfandrade.github.io/Calculadora-De-Gorjetas/
